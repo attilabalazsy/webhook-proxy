@@ -1,10 +1,8 @@
-ARG BASE_IMAGE="alpine"
+ARG BASE_IMAGE="python:3.9.19-alpine"
 
 FROM $BASE_IMAGE
 
 LABEL maintainer "Viktor Adam <rycus86@gmail.com>"
-
-RUN apk --no-cache add python py2-pip
 
 ADD requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
